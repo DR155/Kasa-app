@@ -1,0 +1,12 @@
+.about-collapse-section {
+  max-width: 1023px; /* Largeur max des collapses */
+  margin: 0 70px 0 70px; /* Centrer la section et ajouter une marge en haut */
+  display: flex;
+  flex-direction: column;
+
+}
+@media (max-width: 767.98px) {
+  .about-collapse-section {
+   margin: auto;
+  }
+}

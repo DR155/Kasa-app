@@ -1,0 +1,95 @@
+.logement-info-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.logement-primary-info {
+  flex-grow: 1; /* Prend l'espace disponible */
+}
+
+.logement-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: #FF6060;
+  margin: 30px 0 5px 0; /* Espace entre le titre et la localisation */
+  display: flex;
+}
+
+.logement-location {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1F1F1F;
+  margin: 0 0 20px 0;
+  display: flex;
+}
+
+.logement-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logement-secondary-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Aligne le contenu (Host, Rating) à droite */
+  min-width: 200px; /* Pour éviter que cette colonne ne soit trop écrasée */
+  
+  margin-top: 20px;
+}
+
+
+.logement-collapse-sections {
+  display: grid; /* Ou flex si seulement deux */
+  grid-template-columns: 1fr 1fr; /* Deux colonnes égales pour Description et Équipements */
+  gap: 76px; /* Espace important entre les deux sections Collapse */
+  margin-top: 24px; /* Espace après la section info */
+}
+
+/* Media Queries pour mobile */
+@media (max-width: 767.98px) {
+  .logement-info-layout {
+    flex-direction: column; /* Les infos primaires et secondaires passent en colonne */
+    gap: 2px;
+  }
+  .logement-title {
+    font-size: 18px;
+  }
+  .logement-location {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+ /* .logement-tags-container .tag-placeholder {
+    /*font-size: 10px !important; /* Important pour surcharger le style inline temporaire */
+    /*padding: 2px 10px !important;
+    border-radius: 5px !important;*/
+  
+  .logement-secondary-info {
+    flex-direction: row-reverse; /* Host à droite, Rating à gauche sur mobile */
+    align-items: center; /* Centre verticalement */
+    margin-top: 16px; /* Espace après les tags */
+    justify-content: space-between; /* Espace entre Host et Rating */
+  }
+  .host-info-placeholder {
+    margin-bottom: 0 !important; /* Annule la marge du bas */
+    order: 1; /* Met l'hôte à droite */
+  }
+  .host-info-placeholder p {
+    font-size: 12px !important;
+  }
+  .host-info-placeholder img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .rating-placeholder {
+    text-align: left !important; /* Rating à gauche */
+    order: 0; /* Met le rating à gauche */
+  }
+
+  .logement-collapse-sections {
+    grid-template-columns: 1fr; /* Une seule colonne pour les Collapse */
+    gap: 5px; /* Espace réduit entre les Collapse */
+  }
+}

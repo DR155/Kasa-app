@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Police de caractères principale */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.page-container {
+  max-width: 1240px; /* Largeur max vue sur les maquettes D_Home */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;  /* Espacement sur les côtés pour ne pas coller aux bords */
+  padding-right: 20px; /* sur petits écrans ou si la fenêtre est < 1240px+padding */
+}
