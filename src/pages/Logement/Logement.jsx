@@ -1,4 +1,3 @@
-// src/pages/Logement/Logement.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getLogementById } from '../../services/logementService';
@@ -8,7 +7,6 @@ import HostInfo from '../../components/HostInfo/HostInfo';
 import Rating from '../../components/Rating/Rating';
 import Collapse from '../../components/Collapse/Collapse';
 import './Logement.css';
-// ... (Collapse sera importé plus tard)
 
 function Logement() {
   const { id } = useParams();
