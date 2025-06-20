@@ -24,7 +24,7 @@ Ce projet a été réalisé dans le cadre de la formation [Nom de ta formation, 
     *   React (avec Create React App)
     *   React Router DOM
     *   Font Awesome (pour les icônes)
-    *   CSS (ou SASS si tu l'as utilisé)
+    *   CSS
 *   **Backend :**
     *   API fournie (Node.js)
     *   Docker (pour lancer l'API)
