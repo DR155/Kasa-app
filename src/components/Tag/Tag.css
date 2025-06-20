@@ -1,0 +1,23 @@
+.tag-item {
+  background-color: #FF6060; 
+  color: white;
+  padding: 5px 20px; 
+  border-radius: 10px; 
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 10px; 
+  margin-bottom: 10px;
+  display: inline-block; 
+  line-height: 1.4; /* Améliore la lisibilité verticale */
+}
+
+/* --- Media Queries --- */
+@media (max-width: 767.98px) {
+  .tag-item {
+    font-size: 10px; 
+    padding: 3px 15px;
+    border-radius: 7px; 
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}

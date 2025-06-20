@@ -1,0 +1,56 @@
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.card-item {
+  position: relative; /* Pour positionner le titre et l'overlay */
+  width: 100%;
+  height: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'image couvre toute la carte, peut être rognée */
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0; /* Se positionne en bas */
+  left: 0;
+  width: 100%;
+  height: 70px; /* Hauteur de l'overlay sombre en bas, à ajuster */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+  border-radius: 0 0 10px 10px; /* Coins arrondis en bas */
+  z-index: 1;
+}
+
+.card-title {
+  position: relative;
+  z-index: 2;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+
+/* --- Media Queries --- */
+@media (max-width: 767.98px) {
+  .card-item {
+    height: 255px;
+  }
+  /* Pas besoin de changer .card-title 18px est ok pour mobile*/
+}

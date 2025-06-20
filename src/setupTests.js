@@ -1,5 +1,13 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
+// Learn more about testing here: https://create-react-app.dev/docs/running-tests/
 import '@testing-library/jest-dom';
+
+// Importe les bibliothèques Font Awesome nécessaires
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+// Ajoute les icônes à la bibliothèque Font Awesome globale
+library.add(faChevronLeft, faChevronRight);
+
+// on peux aussi ajouter d'autres icônes ici si on les utilises dans des composants testés
+// import { faStar } from '@fortawesome/free-solid-svg-icons';
+// library.add(faStar);

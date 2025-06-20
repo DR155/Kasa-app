@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Composant Slideshow doit correspondre au snapshot avec plusieurs images 1`] = `
+<div
+  class="slideshow-container"
+>
+  <img
+    alt="Logement photo 1"
+    class="slideshow-image"
+    src="image1.jpg"
+  />
+  <button
+    aria-label="Image précédente"
+    class="slideshow-arrow slideshow-arrow-left"
+  >
+    <i
+      data-testid="fa-icon"
+      icon="chevron-left-icon"
+    />
+  </button>
+  <button
+    aria-label="Image suivante"
+    class="slideshow-arrow slideshow-arrow-right"
+  >
+    <i
+      data-testid="fa-icon"
+      icon="chevron-right-icon"
+    />
+  </button>
+  <div
+    class="slideshow-counter"
+  >
+    1
+    /
+    3
+  </div>
+</div>
+`;

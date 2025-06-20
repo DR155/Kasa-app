@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Composant Banner doit correspondre au snapshot avec texte 1`] = `
+<div
+  class="banner-container "
+>
+  <img
+    alt="Bannière de test"
+    class="banner-image"
+    src="test-banner.jpg"
+  />
+  <div
+    class="banner-overlay"
+  >
+    <h1
+      class="banner-text"
+    >
+      Texte de la bannière
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Composant Banner doit correspondre au snapshot sans texte 1`] = `
+<div
+  class="banner-container banner-no-text"
+>
+  <img
+    alt="Bannière de test"
+    class="banner-image"
+    src="test-banner.jpg"
+  />
+</div>
+`;

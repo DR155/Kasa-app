@@ -1,0 +1,28 @@
+/* src/components/Rating/Rating.css */
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rating-star {
+  font-size: 24px;
+}
+
+.rating-star.active {
+  color: #FF6060;
+}
+
+.rating-star.inactive {
+  color: #E3E3E3;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 767.98px) {
+  .rating-star {
+    font-size: 15px;
+  }
+  .rating-container {
+    gap: 4px;
+  }
+}
