@@ -109,9 +109,7 @@ kasa-app/
 │   │   └── ...
 │   ├── router/         # Configuration de React Router
 │   ├── services/       # Fonctions pour interagir avec l'API
-│   ├── App.js          # Composant racine
 │   ├── index.js        # Point d'entrée de l'application
-│   ├── App.css         # Styles globaux
 │   └── index.css       # Styles globaux
 ├── .gitignore          # Fichiers ignorés par Git
 ├── package.json        # Dépendances et scripts
