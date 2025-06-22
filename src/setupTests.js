@@ -7,7 +7,3 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 // Ajoute les icônes à la bibliothèque Font Awesome globale
 library.add(faChevronLeft, faChevronRight);
-
-// on peux aussi ajouter d'autres icônes ici si on les utilises dans des composants testés
-// import { faStar } from '@fortawesome/free-solid-svg-icons';
-// library.add(faStar);

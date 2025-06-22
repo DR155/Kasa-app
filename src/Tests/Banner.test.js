@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Banner from './Banner';
-import homeBannerImage from '../../assets/images/homeBanner.jpg';
+import Banner from '../components/Banner/Banner.jsx'; 
+import homeBannerImage from '../assets/images/homeBanner.jpg';
 
 // Mock de l'image pour les tests
 const mockImageSrc = "test-banner.jpg";

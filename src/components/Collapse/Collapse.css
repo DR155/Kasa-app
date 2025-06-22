@@ -39,18 +39,29 @@
 }
 
 .collapse-content {
-  background-color: #F6F6F6;
-  border-radius: 0 0 5px 5px;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1.0),
-              padding-top 0.4s cubic-bezier(0.25, 0.1, 0.25, 1.0),
-              padding-bottom 0.4s cubic-bezier(0.25, 0.1, 0.25, 1.0);
-}
+ background-color: #F6F6F6; /* Le fond gris clair */
+  border-radius: 0 0 5px 5px; /* Arrondis en bas */
+  overflow: hidden; /* TRÈS IMPORTANT : Cache tout ce qui dépasse de la hauteur définie */
 
+  /* Styles pour l'animation */
+  max-height: 0; /* Quand le collapse est fermé (pas de classe 'open'), la hauteur max est 0 -> contenu caché */
+  transition: max-height 0.3s ease-in-out; /* Anime la propriété max-height pendant 0.4 secondes */
+
+  /* Padding horizontal même quand fermé, pour que le fond gris ait la bonne largeur */
+  padding: 0 15px; 
+}
+.collapse-content.open {
+  max-height: 500px; 
+  padding-top: 20px;
+  padding-bottom: 20px; 
+  transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+}
 .collapse-content-inner {
   padding: 20px 15px;
   font-size: 18px;
   line-height: 1.5;
+  padding: 0;
+  margin: 0;
 }
 
 .collapse-content-inner p {
@@ -83,6 +94,14 @@
 }
 
 @media (max-width: 767.98px) {
+  .collapse-content {
+    padding: 0 10px;
+  }
+  .collapse-content.open {
+    padding-top: 15px; 
+    padding-bottom: 15px;
+    max-height: 300px; 
+  }
   .collapse-header {
     padding: 8px 12px;
   }

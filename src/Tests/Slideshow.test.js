@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Slideshow from './Slideshow';
+import Slideshow from '../components/Slideshow/Slideshow.jsx';
 
 // Mock des composants Font Awesome pour les tests
 jest.mock('@fortawesome/react-fontawesome', () => ({

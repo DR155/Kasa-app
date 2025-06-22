@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+// src/components/Collapse/Collapse.jsx
+import React, { useState } from 'react'; // On garde useState pour l'état ouvert/fermé
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import './Collapse.css';
+import './Collapse.css'; // On va modifier ce fichier CSS
 
 function Collapse({ title, content, contentType = 'text' }) {
+  // On garde un état pour savoir si le panneau est ouvert ou fermé
   const [isOpen, setIsOpen] = useState(false);
 
+  // Quand on clique sur le titre, on change l'état (ouvert devient fermé, fermé devient ouvert)
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
 
+  // On prépare la classe CSS pour l'icône chevron pour qu'elle tourne
   const iconClassName = `collapse-icon ${isOpen ? 'open' : 'closed'}`;
-  const contentId = `collapse-content-${title.replace(/\s+/g, '-')}`;
-  const headerId = `collapse-header-${title.replace(/\s+/g, '-')}`;
 
+  // On prépare le contenu à afficher (texte ou liste)
   let contentElement;
   if (contentType === 'list' && Array.isArray(content)) {
     contentElement = (
@@ -32,27 +35,31 @@ function Collapse({ title, content, contentType = 'text' }) {
 
   return (
     <div className={`collapse-item ${isOpen ? 'open' : ''}`}>
+      {/* L'en-tête cliquable (le titre et la flèche) */}
       <div
-        id={headerId}
         className="collapse-header"
-        onClick={toggleCollapse}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleCollapse(); }} // Pour l'accessibilité clavier
-        role="button"
-        tabIndex="0"
-        aria-expanded={isOpen}
-        aria-controls={contentId}
-        aria-label={`${title}, ${isOpen ? 'masquer le contenu' : 'afficher le contenu'}`} // Label dynamique
+        onClick={toggleCollapse} // Quand on clique, on appelle toggleCollapse
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleCollapse(); }} // Pour que ça marche aussi avec le clavier (Entrée/Espace)
+        role="button" // On dit que c'est un bouton pour l'accessibilité
+        tabIndex="0" // On peut y accéder avec la touche Tab
+        aria-expanded={isOpen} // On dit si le contenu est visible ou non (pour les lecteurs d'écran)
+        // aria-controls et aria-label peuvent rester si tu les as ajoutés pour l'accessibilité
       >
-        <h3 className="collapse-title" id={`title-${headerId}`}>{title}</h3> {/* id pour aria-labelledby si besoin */}
-        <FontAwesomeIcon icon={faChevronUp} className={iconClassName} aria-hidden="true" /> {/* Explicitement aria-hidden */}
+        <h3 className="collapse-title">{title}</h3> {/* Le titre (vient des props) */}
+        {/* L'icône chevron. Elle tourne grâce à la classe iconClassName et au CSS */}
+        <FontAwesomeIcon icon={faChevronUp} className={iconClassName} aria-hidden="true" />
       </div>
-      {isOpen && (
-        <div className="collapse-content" id={contentId} role="region" aria-labelledby={`title-${headerId}`}>
-             <div className="collapse-content-inner">
-                {contentElement}
-             </div>
-        </div>
-      )}
+
+      {/* Le conteneur du contenu. Il est TOUJOURS là dans le HTML. */}
+      {/* C'est le CSS qui va le cacher/montrer avec une animation grâce à la classe 'open' */}
+      <div
+        className={`collapse-content ${isOpen ? 'open' : ''}`} // La classe 'open' est ajoutée si isOpen est true
+        // id, role, aria-labelledby peuvent rester si tu les as ajoutés pour l'accessibilité
+      >
+         <div className="collapse-content-inner">
+            {contentElement} {/* Le contenu (texte ou liste) */}
+         </div>
+      </div>
     </div>
   );
 }
